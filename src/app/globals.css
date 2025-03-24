@@ -1,0 +1,85 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* === 全局主题颜色 === */
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 214, 219, 220;
+  --background-end-rgb: 255, 255, 255;
+
+  --background-color: #ffffff;
+  --text-color: #000000;
+  --text-subtle-color: #333333;  /* <-- 添加这行 */
+  --icon-bg-color: #ffffff;
+  --icon-color: #000000;
+}
+
+/* 深色模式 */
+.dark {
+  --foreground-rgb: 255, 255, 255;
+  --background-start-rgb: 0, 0, 0;
+  --background-end-rgb: 0, 0, 0;
+
+  --background-color: #121212;
+  --text-color: #ffffff;
+  --text-subtle-color: #cccccc; /* <-- 对应深色模式 */
+  --icon-bg-color: #000000;
+  --icon-color: #ffffff;
+}
+
+/* === 全局应用 === */
+body {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, Liberation Mono, Courier New, monospace;
+  color: var(--text-color);
+  background-color: var(--background-color);  /* 使用 CSS 变量控制背景颜色 */
+  transition: background-color 0.3s ease, color 0.3s ease;  /* 统一切换动画 */
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+
+
+/* Navbar 专属 */
+.bg-background {
+  transition: background-color 0.3s ease;  /* 确保模块背景颜色变化同步 */
+}
+
+/* 图标样式 */
+.icon-style {
+  /*background-color: var(--icon-bg-color);  /* 背景颜色 */
+  color: var(--icon-color);                /* 图标颜色 */
+  /*border-radius: 50%;                      /* 圆形 */
+  padding: 0.5rem;                         /* 图标内边距 */
+  width: 2.5rem;                           /* 图标宽度 */
+  height: 2.5rem;                          /* 图标高度 */
+  display: flex;                           /* 使用 Flex 布局以居中图标 */
+  align-items: center;                     /* 垂直居中 */
+  justify-content: center;                 /* 水平居中 */
+}
+
+
+/* === 导航链接样式 === */
+/* 控制颜色随主题模式变化 */
+.nav-link-style {
+  color: var(--text-color)!important;  /* 浅色模式：黑色；深色模式：白色 */
+  transition: color 0.3s ease; /* 平滑颜色过渡 */
+}
+
+/* 悬停样式 */
+.nav-link-style:hover {
+  color: var(--icon-color);   /* 鼠标悬停时，颜色随主题切换 */
+  /*text-decoration: underline; /* 可选：悬停时加下划线 */
+}
+
+html {
+  --imp-text-color: #c770f0; /* 确保颜色值正确 */
+  height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+.purple {
+  color: var(--imp-text-color) !important;
+}
